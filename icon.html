@@ -1,45 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Information</title>
+<style>
+  body {
+    font-family: georgia; color:#007bff;
+    margin: 0;
+    padding: 0;
+    
+  }
 
-        .rotation-container {
-            position: relative;
-            width: 100px;
-            height: 100px;
-        }
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 50px;
+    box-shadow: 1px 5px 20px gray;
+  }
 
-        .rotate-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: rotateAnimation 5s linear infinite;
-        }
+  .input-group {
+    margin-bottom: 20px;
+    
+  }
+  :hover.input-group, .input-group table, .input-group input { color: red;}
 
-        @keyframes rotateAnimation {
-            0% {
-                transform: translate(-50%, -50%) rotate(0deg);
-            }
-            100% {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
-        }
-    </style>
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .input-group input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  .input-table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .input-table th,
+  .input-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+
+  .input-table th {
+    background-color: #f2f2f2;
+  }
+
+  .input-table td input[type="text"] {
+    width: calc(100% - 16px);
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+  }
+  
+
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+
+
+  .order-number-box {
+    width: 100px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ffffff;
+    border: 1px dashed #000000;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 10px;
+}
+
+.order-number {
+    font-weight: bold;
+}
+
+.lop{display: flex; flex-direction: row;justify-content: center; align-items: center;display: flex;box-shadow: 2px 5px 5px white;
+
+    
+}
+.rop{
+    text-align: center;
+}
+
+.co {
+    max-width: 600px;
+    margin: 50px auto;
+  }
+
+  .in{
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: center;
+  }
+
+  input[type="text"] {
+    
+    
+    border: none;
+    
+  }
+
+  th {background-color: skyblue;}
+
+  .mo{
+    text-align: center; color: #ffffff; background-color: #007bff; padding-top: 5px; padding-bottom: 5px;
+  }
+  #name{ 
+    border:1px solid #ccc ;
+  }
+
+
+</style>
 </head>
 <body>
-    <div class="rotation-container">
-        <img class="rotate-icon" src="image/setting.png" alt="Setting Icon">
+
+
+    <div class="container" id="o1"> <h2 style="font-size: 40px;">ORDER SLIP</h2>
+        
+        <div class="input-wrapper">
+            <label for="name" >Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+        </div>
+
+        <div class="input-wrapper" id="o2">
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number">
+        </div>
     </div>
+
+    <div class="order-number-box">
+        Order Number: <span class="order-number">9603</span>
+    </div>
+
+
+
+<div class="lop">
+<div class="container">
+  <div class="input-group">
+    <label for="frame">Frame Description:</label>
+    <input type="text" id="frame" name="frame" placeholder="Enter frame description">
+  </div>
+
+  <div class="input-group">
+    <label for="product">Product Number:</label>
+    <input type="text" id="product" name="product" placeholder="Enter product number">
+  </div>
+
+  <div class="input-group">
+    <label for="box">Box Number:</label>
+    <input type="text" id="box" name="box" placeholder="Enter box number">
+  </div>
+  
+  <div class="input-group">
+    <label for="serial">Serial Number:</label>
+    <input type="text" id="serial" name="serial" placeholder="Enter serial number">
+  </div>
+  
+  <table class="input-table">
+    <caption>Glass Description</caption>
+    <tr>
+      <td><input type="text" placeholder="Enter data"></td>
+      <td><input type="text" placeholder="Enter data"></td>
+      <td><input type="text" placeholder="Enter data"></td>
+      <td><input type="text" placeholder="Enter data"></td>
+      <td><input type="text" placeholder="Enter data"></td>
+      <td><input type="text" placeholder="Enter data"></td>
+    </tr>
+
+    <tr>
+      <td><input type="text" placeholder="Enter data"></td>
+      <td><input type="text" placeholder="Enter data"></td>
+      <td><input type="text" placeholder="Enter data"></td>
+      <td><input type="text" placeholder="Enter data"></td>
+      <td><input type="text" placeholder="Enter data"></td>
+      <td><input type="text" placeholder="Enter data"></td>
+    </tr>
+  </table>
+
+  <div class="lul">
+  <div class="input-group">
+    <label for="ipd">I.P.D:</label>
+    <input type="text" id="ipd" name="ipd" placeholder="Enter I.P.D">
+  </div>
+
+  <div class="input-group">
+    <label for="segment">Segment:</label>
+    <input type="text" id="segment" name="segment" placeholder="Enter Segment">
+  </div>
+
+  <div class="input-group">
+    <label for="order-date">Order Date:</label>
+    <input type="date" id="order-date" name="order-date" placeholder="Enter order date">
+  </div>
+
+  <div class="input-group">
+    <label for="d-date">D: Date:</label>
+    <input type="date" id="d-date" name="d-date" placeholder="Enter D date">
+  </div>
+
+  <div class="input-group">
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" name="phone" placeholder="Enter phone number">
+  </div>
+  
+  <table class="input-table">
+    <caption>Payment Information</caption>
+    
+    <tr>
+      <td>Total Amount</td>
+      <td><input type="text" placeholder="Enter data"></td>
+      
+    </tr>
+    <tr>
+      <td>Prepaid Amount</td>
+      <td><input type="text" placeholder="Enter data"></td>
+      
+    </tr>
+    <tr>
+        <td>Dew Amount</td>
+        <td><input type="text" placeholder="Enter data"></td>
+        
+      </tr>
+  </table>
+  
+  <div class="rop">
+    <h1> Nowroz Optical</h1>
+    <p>17 No. K.C.C Glass Market</p>
+    <p>(Opposit Side of Songkho Cenema Hall, Under the Water Tank)</p>
+    <p><strong>Khan-A-Sobuj-Road, Khulna</strong></p>
+    <p>Phone:02-44110644,
+    Bkash:01714481435,
+    Nagad:01978481435,
+    Bkash:01711250448,
+    Mobile:01961112030</p></div>
+
+
+
+
+    <div class="co">
+        <div class="io">
+          <div class="left-group">
+            <div class="input-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name">
+            </div>
+      
+            <div class="input-group">
+              <label for="address">Address:</label>
+              <input type="text" id="address" name="address" placeholder="Enter your address">
+            </div>
+          </div>
+      
+          <div class="right-group">
+
+            <div class="in">
+            <div class="input-group">
+                
+              <label for="order-date">Order Date:</label>
+              <input type="date" id="order-date" name="order-date">
+            </div>
+            
+            <div class="input-group">
+              <label for="delivery-date">D: Date:</label>
+              <input type="date" id="delivery-date" name="delivery-date"></div>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <table>
+        <thead>
+          <tr>
+            <th style="color: #ffffff;">Description</th>
+            <th style="color: #ffffff;">Amount</th>
+            <th style="color: #ffffff;">TK</th>
+            <th style="color: #ffffff;">Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="4"><input type="text" name="description1"></td>
+            <td><input type="text" name="amount1"></td>
+            <td><input type="text" name="tk1"></td>
+            <td><input type="text" name="number1"></td>
+          </tr>
+          <tr>
+            
+            <th style="color: #ffffff;">Total→</th>
+            
+            <td><input type="text" name="tk2"></td>
+            <td><input type="text" name="number2"></td>
+          </tr>
+          <tr>
+            <th style="color: #ffffff;">Paid→</th>
+            
+            <td><input type="text" name="tk3"></td>
+            <td><input type="text" name="number3"></td>
+          </tr>
+          <tr>
+            <th style="color: #ffffff;">Dew→</th>
+            
+            <td><input type="text" name="tk4"></td>
+            <td><input type="text" name="number4"></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+<h3 class="mo">Merchandise sold is non-refundable</h3>
+
+
+
+</div>
+</div>
+</div>
+
 </body>
 </html>

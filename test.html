@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Background Animation</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, silver, white);
+    animation: colorChange 5s infinite alternate; animation-delay: 2s;
+  }
+
+  @keyframes colorChange {
+    0% {
+      background: linear-gradient(90deg, silver);
+    }
+    50% {
+      background: linear-gradient(150deg, white);
+    }
+
+    100%{
+      background: linear-gradient(180deg,silver );
+    }
+  }
+</style>
+</head>
+<body>
+  
+</body>
+</html>
